@@ -14,7 +14,6 @@ class UserController extends Controller
         $data = $request->json()->all();
         $user = User::create([
             'name'=> $data['name'],
-            'user_name'=> $data['user_name'],
             'email'=> $data['email'],
             'password'=> $data['password'],
             'state'=> $data['state'],
@@ -26,7 +25,6 @@ class UserController extends Controller
         $user = User::findOrFail($data['id']);
         $response = $user->update([
             'name'=> $data['name'],
-            'user_name'=> $data['user_name'],
             'email'=> $data['email'],
             'password'=> $data['password'],
             'state'=> $data['state'],
